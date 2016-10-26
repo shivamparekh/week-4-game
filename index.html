@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Crystal Collector!</title>
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div id="gametitle">
+         <h1>Crystals Collector!</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div id="rules">
+
+          <p>You will be given a random number at the start of the game.</p>
+
+          <p>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score.</p>
+
+          <p>You win the game by matching the total score to the random number, you lose the game if your total score goes above the random number.</p>
+
+          <p>The value of each crystal is hidden from you until you click on it.</p>
+
+          <p>Each time when the game starts, the game will change the values of each crystal. Good luck!</p>
+
+        </div>
+      </div>
+    </div> 
+
+    <div class="row">
+      <div class="col-sm-3">
+        <div id="random">
+
+          <p>Random number: <span id="randomNumber"></span></p>
+
+        </div>
+      </div>  
+      
+      <div class="col-sm-2">
+        <div id="result">
+
+          <p>Wins: <span id="wins">0</span></p>
+
+          <p>Losses: <span id="losses">0</span></p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div id= "buttons">
+          
+          <button type="button" id="redButton"> <img src="http://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Jewelry-and-Diamonds-PNG/Red_Gem_PNG_Clip_Art_Image.png?m=1466329511" alt="Red" width="100" height="100"></button>
+
+          <button type="button" id="blueButton"> <img src="http://gallery.yopriceville.com/var/thumbs/Free-Clipart-Pictures/Jewelry-and-Diamonds-PNG/Blue_Gem_PNG_Clip_Art_Image.png?m=1466329515" alt="Blue" width="100" height="100"></button>
+
+          <button type="button" id="yellowButton"> <img src="http://gallery.yopriceville.com/var/thumbs/Free-Clipart-Pictures/Jewelry-and-Diamonds-PNG/Yellow_Gem_PNG_Clip_Art_Image.png?m=1466329519" alt="Yellow" width="100" height="100"></button>
+
+          <button type="button" id="greenButton"> <img src="http://gallery.yopriceville.com/var/thumbs/Free-Clipart-Pictures/Jewelry-and-Diamonds-PNG/Green_Gem_PNG_Clip_Art_Image.png?m=1466329508" alt="Green" width="100" height="100"></button>
+
+        </div>   
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">    
+        <div id="totalscore">
+
+          <p>Your total score is:</p>
+
+        </div>
+      </div>   
+    </div> 
+
+    <div class="row">
+      <div class="col-sm-4">    
+        <div id="totalscore">
+
+          <p><span id="score">0</span></p>
+
+        </div>
+      </div>   
+    </div>   
+  </div>
+
+  <script type="text/javascript">
+
+    $( document ).ready(function(){
+
+      //variables
+      var score= 0; 
+      var wins= 0;
+      var losses = 0;  
+
+      //random number
+      var Random=Math.floor(Math.random()*101+19);
+      $('#randomNumber').text(Random);
+
+      //random numbers assigned to buttons
+      var redButton= Math.floor(Math.random()*11+1);
+      var blueButton= Math.floor(Math.random()*11+1);
+      var yellowButton= Math.floor(Math.random()*11+1);
+      var greenButton= Math.floor(Math.random()*11+1); 
+
+      //win or lose
+      function totalscore() {
+        if (score == randomNumber) {
+          wins++;
+        }
+        if (score > randomNumber) {
+          losses++;
+        }
+      };
+
+      //reset
+      function reset(){
+        Random=Math.floor(Math.random()*101+19);
+        console.log(Random)
+        $('#randomNumber').text(randomNumber);
+        redButton= Math.floor(Math.random()*11+1);
+        blueButton= Math.floor(Math.random()*11+1);
+        yellowButton= Math.floor(Math.random()*11+1);
+        greenButton= Math.floor(Math.random()*11+1);
+        score= 0;
+      }; 
+
+    });
+
+  </script>
+
+</body>
+</html>
+
+

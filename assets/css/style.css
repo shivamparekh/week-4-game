@@ -1,0 +1,45 @@
+body {
+	background-image: url(http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/08/cool-white-background-3.jpg);
+	background-size: 100%;
+}
+
+.container {
+}
+
+#gametitle {
+	background-color: orange;
+	text-align: center;
+	color: white;
+	margin: 10px;
+}
+
+#rules {
+	background-color: lightyellow;
+	color: green;
+	margin: 10px;
+	padding: 5px;
+}
+
+#random {
+	background-color: lightgreen;
+	color: purple;
+	margin: 10px;
+}
+
+#result {
+	background-color: lightblue;
+	color: black;
+	margin: 10px;
+}
+
+#buttons {
+	background-color: transparent;
+	text-align: center;
+	margin: 10px;
+}
+
+#totalscore {
+	background-color: teal;
+	color: white;
+	margin: 10px;
+}

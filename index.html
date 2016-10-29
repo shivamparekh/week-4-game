@@ -96,7 +96,7 @@
       <div class="col-sm-4">    
         <div id="totalscore">
 
-          <p><span id="score">0</span></p>
+          <p><span id="userScore">0</span></p>
 
         </div>
       </div>   
@@ -124,25 +124,54 @@
 
       //win or lose
       function totalscore() {
-        if (score == randomNumber) {
+        if (score == Random) {
           wins++;
+          $('#wins').text(wins);
+          reset();
         }
-        if (score > randomNumber) {
+        if (score > Random) {
           losses++;
+          $('#losses').text(losses);
+          reset();
         }
-      };
+      }
 
       //reset
       function reset(){
         Random=Math.floor(Math.random()*101+19);
-        console.log(Random)
-        $('#randomNumber').text(randomNumber);
+        console.log(Random);
+        $('#randomNumber').text(Random);
         redButton= Math.floor(Math.random()*11+1);
         blueButton= Math.floor(Math.random()*11+1);
         yellowButton= Math.floor(Math.random()*11+1);
         greenButton= Math.floor(Math.random()*11+1);
         score= 0;
-      }; 
+        $('#userScore').text(score);
+      }
+
+      $('#redButton').click(function() {
+        score = score + redButton;
+        $('#userScore').text(score);
+        totalscore();
+      });
+
+      $('#blueButton').click(function() {
+        score = score + blueButton;
+        $('#userScore').text(score);
+        totalscore();
+      });
+
+      $('#yellowButton').click(function() {
+        score = score + yellowButton;
+        $('#userScore').text(score);
+        totalscore();
+      });
+
+      $('#greenButton').click(function() {
+        score = score + greenButton;
+        $('#userScore').text(score);
+        totalscore();
+      });
 
     });
 
@@ -150,5 +179,7 @@
 
 </body>
 </html>
+
+
 
 
